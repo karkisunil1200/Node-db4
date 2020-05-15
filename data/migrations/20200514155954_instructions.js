@@ -4,6 +4,8 @@ exports.up = function(knex) {
 
     tbl.string('steps').notNullable();
 
+    tbl.integer('quantity').notNullable();
+
     tbl
       .integer('recipe_id')
       .unsigned()
@@ -18,9 +20,9 @@ exports.up = function(knex) {
       .unsigned()
       .notNullable()
       .references('id')
-      .inTable('ingredientss')
-      .onDelete('RESTRICT')
-      .onUpdate('CASCADE');
+      .inTable('ingredients')
+      .onUpdate('CASCADE')
+      .onDelete('RESTRICT');
   });
 };
 
