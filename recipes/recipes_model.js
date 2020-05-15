@@ -7,7 +7,7 @@ module.exports = {
 };
 
 function getRecipes() {
-  return db.select('*').from('recipes');
+  return db.select('recipes.name').from('recipes');
 }
 function getShoppingList(id) {
   return db
